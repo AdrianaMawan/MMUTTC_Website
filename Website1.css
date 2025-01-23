@@ -7,11 +7,27 @@
 }
 
 /* Body Styling */
-body {
-    background-color: #f4f4f4;
+html, body {
+    height: 100%; /* Ensure the body and html elements take full height */
+    background: url('pingpong2.jpg') no-repeat center center fixed; /* Background image for main only */
+    background-size: cover; /* Cover entire main area */
     color: #333;
     line-height: 1.8;
     font-size: 16px;
+    display: flex; /* Enable flex layout for the body */
+    flex-direction: column; /* Stack header, content, and footer */
+    background-color: #f4f4f4; /* Fallback background color for browsers that don't support images */
+}
+
+/* Wrapper for Main Content */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body spans at least the full viewport height */
+}
+
+main {
+    flex: 1; /* Allow main content to grow and take up available space */
 }
 
 /* Header */
@@ -62,10 +78,11 @@ nav a:hover {
 
 /* Section Styling */
 section {
-    margin: 30px auto;
-    max-width: 900px;
+    margin: 30px auto; /* Center section horizontally */
+    max-width: 900px; /* Standardized maximum width for all sections */
+    width: 90%; /* Responsive width for smaller screens */
     padding: 25px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8); /* Add some transparency to show background */
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -112,9 +129,9 @@ footer {
     background-color: #00274d;
     color: #fff;
     padding: 15px 0;
-    margin-top: 40px;
     font-size: 0.9rem;
     border-top: 5px solid #ffcc00;
+    width: 100%;
 }
 
 /* Responsive Design */

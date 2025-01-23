@@ -1,29 +1,27 @@
-// Smooth Scrolling for Navigation Links
+// Page Redirection for Navigation Links
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-            targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+        e.preventDefault(); // Prevent default anchor behavior
+        const targetPage = this.getAttribute('href'); // Get the href value
+        window.location.href = targetPage; // Redirect to the target page
     });
 });
 
-// Popup Alert for Event Registration Button
+// Page Redirection for Event Registration Button
 const registerButton = document.querySelector('section#events button');
-registerButton.addEventListener('click', function () {
-    alert('Thank you for your interest! Event registration is coming soon.');
-});
+if (registerButton) {
+    registerButton.addEventListener('click', function () {
+        window.location.href = 'events.html'; // Redirect to the events page
+    });
+}
 
 // Dynamic Gallery
 const galleryImages = [
-    'https://via.placeholder.com/300/0047AB/FFFFFF?text=Event+1',
-    'https://via.placeholder.com/300/0047AB/FFFFFF?text=Event+2',
-    'https://via.placeholder.com/300/0047AB/FFFFFF?text=Event+3'
+
+    'Gallery/photo_6091181310371544925_y.jpg',
+    'Gallery/photo_6091181310371544926_y.jpg',
+    'Gallery/photo_6091181310371544928_y.jpg',
+    'Gallery/photo_6091181310371544934_y.jpg'
 ];
 
 let currentImageIndex = 0;
