@@ -3,42 +3,42 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', Arial, sans-serif; /* More modern font */
+    font-family: 'Roboto', Arial, sans-serif;
 }
+
 
 /* Body Styling */
 html, body {
-    height: 100%; /* Ensure the body and html elements take full height */
-    background: url('Gallery/pingpongbanner.jpg') no-repeat center center fixed; /* Background image for main only */
-    background-size: cover; /* Cover entire main area */
+    height: 100%;
+    background: url('Gallery/pingpongbanner.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #333;
     line-height: 1.8;
     font-size: 16px;
-    display: flex; /* Enable flex layout for the body */
-    flex-direction: column; /* Stack header, content, and footer */
-    background-color: #f4f4f4; /* Fallback background color for browsers that don't support images */
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
 }
 
-/* Wrapper for Main Content */
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure the body spans at least the full viewport height */
+    min-height: 100vh;
 }
 
 main {
-    flex: 1; /* Allow main content to grow and take up available space */
+    flex: 1;
 }
 
 /* Header */
 header {
-    background: linear-gradient(135deg, #00274d, #004080); /* Gradient background for a modern look */
+    background: linear-gradient(135deg, #00274d, #004080);
     color: #fff;
     padding: 40px 15px;
     text-align: center;
-    border-bottom: 5px solid #ffcc00; /* Accent color for contrast */
-    position: relative; /* Allows for positioning the logo */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth */
+    border-bottom: 5px solid #ffcc00;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
@@ -46,7 +46,8 @@ header h1 {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Subtle text shadow for emphasis */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
 }
 
 header p {
@@ -54,72 +55,76 @@ header p {
     margin-top: 10px;
     font-weight: 300;
     font-style: italic;
-    opacity: 0.9; /* Slight transparency for style */
+    opacity: 0.9;
 }
-/* Contact Links in Header */
+
+/* Register Button Styling */
+.register-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #00274d;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.register-button:hover {
+    background-color: #e6b800;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.register-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Links */
 header .contact-links {
     position: absolute;
     top: 30px;
     right: 30px;
     display: flex;
-    gap: 15px; /* Spacing between links */
+    gap: 15px;
     align-items: center;
 }
 
 header .contact-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    background-color: #ffcc00;
-    color: #00274d;
+    display: inline-block;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
-    font-size: 1.2rem;
-    text-decoration: none;
+    background-color: #ffffff;
+    background-size: cover;
+    background-position: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
 }
 
+/* Specific Images for Buttons */
+header .contact-links .instagram {
+    background-image: url('Gallery/Instagram.png');
+}
+
+header .contact-links .linktree {
+    background-image: url('Gallery/linktree.png');
+}
+
+
+/* Hover Effect */
 header .contact-links a:hover {
-    background-color: #e6b800;
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-header .contact-links a:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-header .contact-links a i {
-    font-size: 1.4rem; /* Adjust icon size */
-    color: inherit;
-}
-
-/* Tooltip for Contact Links */
-header .contact-links a:hover::after {
-    content: attr(data-tooltip); /* Add tooltip text from the 'data-tooltip' attribute */
-    position: absolute;
-    top: 70px; /* Position below the icon */
-    background-color: #00274d;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    white-space: nowrap;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-header .contact-links a::after {
-    content: '';
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
 
 /* Logo Styling */
 header .logo {
@@ -128,10 +133,10 @@ header .logo {
     left: 30px;
     width: 120px;
     height: 120px;
-    border-radius: 50%; /* Optional: Makes the logo circular */
-    object-fit: cover; /* Ensures the image scales without distortion */
-    border: 3px solid #ffcc00; /* Optional: Add a border for better visibility */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth to the logo */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffcc00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Navigation */
@@ -143,33 +148,168 @@ nav {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 25px;
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #ffcc00;
+    color: #00274d;
+    padding: 12px 20px;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-nav a:hover {
-    background-color: #002f66;
+.dropbtn:hover {
+    background-color: #e6b800;
     transform: scale(1.05);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #004080;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
     border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.dropdown-content a:hover {
+    background-color: #002f66;
+    color: #ffcc00;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Core Members Section */
+.members-container {
+    margin: 30px auto;
+    max-width: 1200px;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.member {
+    flex: 0 1 calc(33.33% - 20px); /* Three members per row with spacing */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.member-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #ffcc00;
+}
+
+.member h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #00274d;
+    font-weight: 600;
+}
+
+.member p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Responsive Design for Members Section */
+@media (max-width: 768px) {
+    .member {
+        flex: 0 1 calc(50% - 20px); /* Two members per row on smaller screens */
+    }
+
+    .member-photo {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .member {
+        flex: 0 1 calc(100% - 20px); /* One member per row on very small screens */
+    }
+}
+/* Styling for Bullet Points */
+section ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+    margin: 20px 0;
+}
+
+section ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    background-color: rgba(255, 204, 0, 0.1); /* Subtle background highlight */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section ul li:hover {
+    transform: translateX(5px); /* Subtle movement effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+section ul li::before {
+    content: "✔"; /* Custom bullet icon */
+    color: #ffcc00;
+    font-size: 1.2rem;
+    margin-right: 10px;
 }
 
 /* Section Styling */
 section {
-    margin: 30px auto; /* Center section horizontally */
-    max-width: 900px; /* Standardized maximum width for all sections */
-    width: 90%; /* Responsive width for smaller screens */
+    margin: 30px auto;
+    max-width: 900px;
+    width: 90%;
     padding: 25px;
-    background-color: rgba(255, 255, 255, 0.8); /* Add some transparency to show background */
+    background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 section h2 {
@@ -178,7 +318,6 @@ section h2 {
     color: #00274d;
     font-weight: 600;
     border-bottom: 3px solid #ffcc00;
-    display: inline-block;
     padding-bottom: 5px;
 }
 
@@ -189,85 +328,6 @@ section p {
     color: #555;
 }
 
-/* Buttons */
-button {
-    background-color: #ffcc00;
-    color: #00274d;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-    background-color: #e6b800;
-    transform: translateY(-2px);
-}
-.register-button {
-    display: inline-block;
-    background-color: #ffcc00;
-    color: #00274d;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.register-button:hover {
-    background-color: #e6b800;
-    transform: translateY(-2px);
-}
-
-
-/* Members Section Styling */
-.members-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.member {
-    text-align: center;
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.member:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.member-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 3px solid #ffcc00;
-}
-
-.member h3 {
-    font-size: 1.2rem;
-    color: #00274d;
-    margin-bottom: 10px;
-}
-
-.member p {
-    font-size: 0.9rem;
-    color: #555;
-    line-height: 1.4;
-}
-
 /* Footer */
 footer {
     text-align: center;
@@ -276,30 +336,29 @@ footer {
     padding: 15px 0;
     font-size: 0.9rem;
     border-top: 5px solid #ffcc00;
-    width: 100%;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
+    header h1 {
+        font-size: 2rem;
     }
 
-    nav a {
-        padding: 10px 15px;
-        font-size: 0.9rem;
+    header p {
+        font-size: 1.1rem;
+    }
+
+    .contact-links {
+        flex-direction: row;
+        gap: 10px;
     }
 
     section {
         padding: 20px;
     }
 
-    header h1 {
-        font-size: 2rem;
-    }
-
-    header p {
-        font-size: 1rem;
+    .dropbtn {
+        font-size: 0.9rem;
+        padding: 10px 15px;
     }
 }
