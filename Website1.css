@@ -73,8 +73,11 @@ header p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    text-align: center; /* Center align text */
+    width: auto; /* Allow it to adjust based on the text content */
 }
 
+/* Hover and Active States */
 .register-button:hover {
     background-color: #e6b800;
     transform: translateY(-3px);
@@ -84,6 +87,24 @@ header p {
 .register-button:active {
     transform: translateY(0);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile-Specific Adjustments */
+@media (max-width: 768px) {
+    .register-button {
+        display: block; /* Stack the button */
+        width: 80%; /* Take up most of the width */
+        margin: 10px auto; /* Center it horizontally */
+        font-size: 1rem; /* Ensure readability */
+        padding: 12px 15px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .register-button {
+        width: 90%; /* Wider on very small screens */
+        font-size: 0.9rem; /* Slightly smaller font size */
+    }
 }
 
 /* Contact Links */
