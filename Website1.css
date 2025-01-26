@@ -103,7 +103,7 @@ header p {
 @media (max-width: 480px) {
     .register-button {
         width: 90%; /* Wider on very small screens */
-        font-size: 0.9rem; /* Slightly smaller font size */
+        font-size: 0.8rem; /* Slightly smaller font size */
     }
 }
 
